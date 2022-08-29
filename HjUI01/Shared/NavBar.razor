@@ -1,0 +1,59 @@
+﻿
+<Animate  Animation="Animations.Fade" DurationMs="300">
+    <nav class=" transition-all w-full h-8 pt-2 bg-sky-600 text-white mb-12 @(showingNav?" mb-44 sm:mb-12":"mb-12")">
+        <div class=" flex w-full h-12 ">
+            <div class="navbar flex flex-none h-12 items-center text-xl md:text-2xl">
+                <button @onclick=@tougleNav class="h-12 bg-sky-600 flex sm:hidden items-center pr-3 transition-all text-3xl">
+                    <i class="ph-@navtougleicon-light transition-all"></i>
+                </button>
+                
+        
+                <div class="tabs hidden flex-none sm:flex h-12 items-center text-xl md:text-2xl">
+                    <div class="nav-item @tclass(0)"/>
+                    @foreach (var item in tabs)
+                    {
+                        if(item.id>0 && item.id < tabs.Count-1){
+                            <a href="@item.path" class="nav-item @tclass(item.id) ">
+                                <i class="ph-@item.icon-light"></i> &nbsp;
+                                @item.text
+                            </a>
+                        }
+                    }
+                    <div class="nav-item @tclass(tabs.Count-1)" />
+                </div>
+            </div>
+            <div class="flex-auto  bg-sky-600 pl-8 flex justify-end">
+
+                @if(NoId){
+                    <a href="/login" class="login flex -mt-2 items-center hover:text-white transition-all text-lg text-blue-100 pl-6">
+                        <span class="ph-sign-in-light"></span>
+                        &nbsp;
+                        الدخول
+                    </a>
+                }else{
+
+                    <a href="/login" class="login flex -mt-2 items-center hover:text-white transition-all text-lg text-blue-100 pl-6">
+                        <span class="ph-sign-out-light"></span>
+                        &nbsp;
+                        خروج
+                    </a>
+                }
+                <div class="logo w-16 h-16 -mt-2 text-4xl flex items-center">
+                    logo
+                </div>
+            </div>
+        </div>
+        <div class="nav-list overflow-hidden sm:hidden transition-all text-xl bg-sky-700 @(showingNav?" h-max":"h-0")">
+            @foreach(var item in tabs){
+                if (item.id > 0 && item.id < tabs.Count - 1)
+                {
+                    <a href="@item.path" class="flex items-center px-4 py-2">
+                        <i class="ph-@item.icon-light"> </i>  &nbsp;
+                        @item.text
+                    </a>
+                }
+            }
+        </div>
+    </nav>
+</Animate>
+

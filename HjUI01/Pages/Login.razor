@@ -1,0 +1,40 @@
+﻿@inject HttpClient Http
+
+@page "/Login"
+<PageTitle>تسجيل دخول</PageTitle>
+
+
+<div class="post-container m-auto w-5/6 md:w-[500px]">
+    
+    @if (message != "")
+    {
+        <Note status=@status text=@message />
+    }
+    <div class="std-border">
+        <div class="post-header py-4 px-8 bg-graded">
+            <h2 class="post-title text-center ">
+                تسجيل دخول
+            </h2>
+
+        </div>
+
+        <hr class="sapcer w-5/6 m-auto" />
+        <div class="post-body text-lg text-gray-700/[.95] py-4 px-10 sm:px-14 flex flex-col">
+            <input @bind="@PhoneNumber" placeholder="رقم الهاتف" required type="tel" class=" std-textbox mt-4 m-auto" />
+            @if(errors[0]!=""){
+                <div class="text-red-600 text-xs">* @errors[0]</div>
+            }
+            
+            <input @bind="@Password" placeholder="كلمة المرور" required type="password" class=" std-textbox  mt-4 m-auto" />
+
+            <button @onclick=@login class="transition-all @(loading?"bg-gray-50":"") btn-std m-auto mt-3 flex items-center justify-center">
+                
+                @if(loading){
+                     <i class="ph-circle-notch-light animate-spin"></i>
+                }else{
+                    <p>دخول</p>
+                }
+            </button>
+        </div>
+    </div>
+</div>

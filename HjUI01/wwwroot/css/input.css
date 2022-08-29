@@ -1,0 +1,137 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .btn-primary {
+        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    }
+
+    .post-header-item {
+        @apply transition-all flex justify-start text-gray-600 hover:text-yellow-600;
+    }
+
+    .item-border {
+        @apply rounded-md border border-blue-700/[.9];
+    }
+
+    .spacer {
+        @apply transition-all w-5/6 m-auto border-sky-600 border-t;
+    }
+
+    .std-textarea {
+        @apply transition-all m-auto p-2 w-full rounded-lg border-2 outline outline-0 hover:outline-1 active:outline-[3px] outline-sky-500 border-sky-600 focus:outline-none focus:ring focus:ring-sky-300;
+    }
+
+    .std-textbox {
+        @apply transition-all m-auto px-2 py-1 w-full rounded-lg border-2 outline outline-0 hover:outline-1 active:outline-[3px] outline-sky-500 border-sky-600 focus:outline-none focus:ring focus:ring-sky-300;
+    }
+
+    .hoverd-graded {
+        @apply hover:via-cyan-200/40;
+    }
+
+    .std-border {
+        @apply rounded-2xl border-2 border-blue-300/[.8];
+    }
+
+    .btn-std {
+        @apply transition-all border py-1 px-4 w-32 bg-cyan-200/[.12] hover:bg-sky-300/[.15] text-blue-900 hover:shadow-md std-border;
+    }
+
+    .bg-graded {
+        @apply bg-gradient-to-r from-cyan-400/[0] via-cyan-200/[.15] to-cyan-400/[0];
+    }
+
+    .post-buttons {
+        @apply flex justify-center flex-auto transition-all text-blue-1000 hoverd-graded bg-graded;
+    }
+
+    .next-to-active {
+        @apply rounded-br-3xl;
+    }
+
+    .befor-active {
+        @apply rounded-bl-3xl;
+    }
+
+    .nav-item {
+        @apply transition-all flex items-center h-full bg-sky-600 text-white px-5 hover:text-blue-100;
+    }
+
+    .nav-item-active {
+        @apply transition-all bg-transparent bg-white rounded-t-3xl text-sky-600 hover:text-sky-600;
+    }
+
+    .separator {
+        @apply border-r border-sky-300/[.9];
+    }
+
+    .post-tag {
+        @apply rounded-lg px-1 bg-stone-600 text-slate-100;
+    }
+
+}
+.note {
+    @apply border rounded-2xl flex justify-start items-center my-2 p-2;
+}
+
+.note-done {
+    @apply bg-green-100 border-green-700/[.9] text-green-900 note;
+}
+
+.note-info {
+    @apply bg-sky-50/50 border-sky-700/[.9] text-blue-900 note;
+}
+
+.note-warning {
+    @apply bg-yellow-100 border-orange-600/[.9] text-orange-700 note;
+}
+
+.note-warning-circle {
+    @apply bg-orange-100 border-red-700/[.9] text-red-800 note;
+}
+
+div{
+    @apply transition-all;
+}
+
+body {
+    font-family: 'Amiri', arial, serif;
+}
+
+h2 {
+    @apply text-2xl md:text-4xl text-blue-900 transition-all;
+}
+
+option {
+    @apply bg-white/40 hover:bg-graded;
+}
+
+
+
+
+
+.mat {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: #d2d4ff;
+    border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #1669dd;
+    border-radius: 100vh;
+}
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #0f5ecc;
+    }
